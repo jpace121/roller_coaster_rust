@@ -1,3 +1,7 @@
+//Author: J. Pace <github.com/jpace121>
+//Copyright: 2015
+//License: http://opensource.org/licenses/BSD-2-Clause
+
 // Make units we can enforce math with.
 // Use enums? Or structs? Or phantom something or the other?
 
