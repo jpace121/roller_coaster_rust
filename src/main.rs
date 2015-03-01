@@ -18,11 +18,11 @@ struct CoasterStatus{
 fn main() {
     // Set some current parameters.
     let mut status = CoasterStatus{
-        m:10f32,
-        v:10f32,
-        h:0f32,
-        u:0f32,
-        k:0f32
+        m: 10.,
+        v: 10.,
+        h: 0.,
+        u: 0.,
+        k: 0.
     };
 
     status.k = get_kinetic(&status);
