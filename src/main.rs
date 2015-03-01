@@ -6,30 +6,33 @@
 // Use enums? Or structs? Or phantom something or the other?
 
 // Use a struct for the current status of the coaster.
+// (Should this be more OOP-ish?)
 struct CoasterStatus{
     m:f32, //mass in kg
     v:f32, //velocity in m/s
     h:f32, //height in m
-    U:f32, //Potential energy in J
-    K:f32 //Kinetic Energy in J
+    u:f32, //Potential energy in J
+    k:f32 //Kinetic Energy in J
 }
 
 fn main() {
     // Set some current parameters.
-    let status = CoasterStatus{
+    let mut status = CoasterStatus{
         m:10f32,
         v:10f32,
         h:0f32,
-        U:0f32,
-        K:0f32
+        u:0f32,
+        k:0f32
     };
 
+    status.k = get_kinetic(&status);
+    status.u = get_potential(&status);
     println!("Velocity is {} m/s.",status.v );
     println!("Mass is {} kg", status.m);
     println!("Height is {} m", status.h);
     println!("");
-    println!("Kinetic Energy: {}", get_kinetic(&status));
-    println!("Potential Energy: {}", get_potential(&status));
+    println!("Kinetic Energy: {}", status.k);
+    println!("Potential Energy: {}", status.u);
 }
 
 fn get_kinetic(status:&CoasterStatus) -> f32{
